@@ -1,2 +1,4 @@
 \node_modules
 \venv
+/server/scripts/nvd_files/
+\server\scripts\nvd_files\
