@@ -1,5 +1,4 @@
-// import logo from './logo.svg';
-import './App.css';
+import './Quesitons.css';
 import ProductSelection from './components/pages/ProductSelection';
 import NavBar from './components/navigation/NavBar';
 

@@ -37,7 +37,6 @@ def product_selection():
     input = request.json
     result_json = run_cybuy({"vendor": input["vendor"], "device": input["device"], "email": input["email"]})
     response = jsonify(json.loads(dumps(result_json)))
-
     # response.headers.add('Access-Control-Allow-Origin', '*')
 
     # print(type(json.loads(dumps(result_json))))
