@@ -38,12 +38,8 @@ def product_selection():
     print(input)
     result_json = run_cybuy(input)
     # print(result_json["result"][0]["impact"]["baseMetricV3"]["cvssV3"]["baseScore"])
-    Total = 0
-    for each_result in result_json["result"]:
-        base_score = each_result["impact"]["baseMetricV3"]["cvssV3"]["baseScore"]
-        Total = Total + base_score
-    average_score = Total/len(result_json["result"])
-    print(average_score)
+
+    # response = jsonify(json.loads(dumps(result_json)))
     response = jsonify(json.loads(dumps(result_json)))
     # response.headers.add('Access-Control-Allow-Origin', '*')
 
