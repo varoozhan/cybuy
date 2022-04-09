@@ -35,12 +35,20 @@ app = create_app()
 def product_selection():
     # if(request.method == "POST"):
     input = request.json
-    result_json = run_cybuy({"vendor": input["vendor"], "device": input["device"], "email": input["email"]})
+    print(input)
+    result_json = run_cybuy(input)
+    # print(result_json["result"][0]["impact"]["baseMetricV3"]["cvssV3"]["baseScore"])
+    Total = 0
+    for each_result in result_json["result"]:
+        base_score = each_result["impact"]["baseMetricV3"]["cvssV3"]["baseScore"]
+        Total = Total + base_score
+    average_score = Total/len(result_json["result"])
+    print(average_score)
     response = jsonify(json.loads(dumps(result_json)))
     # response.headers.add('Access-Control-Allow-Origin', '*')
 
     # print(type(json.loads(dumps(result_json))))
-    print(type(response))
+    # print(type(response))
     # return redirect(url_for("result", data=dumps(result_json["result"][0]["_id"])), code=307)
     return response
     # return result_json

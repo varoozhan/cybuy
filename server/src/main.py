@@ -1,12 +1,12 @@
 from search_db import search_db
+# from relevant_extractor import relevant_extractor
 from flask import Flask, request, jsonify
 
 
 def run_cybuy(user_input):
-
     # Search NVD using vendor and product
     nvd_entries = search_db(user_input)
-    # # Extract relevant info from the entries that were returned by search_db
+    # Extract relevant info from the entries that were returned by search_db
     # relevant_info = relevant_extractor(nvd_results)
     # # Algorithm to calculate the score
     # score = risk_calculator(relevant_info, user_input)
