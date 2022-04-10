@@ -8,8 +8,9 @@ function Results() {
     console.log(inputs)
     return (
         <div>
-        <div> Results
-        </div>
+            <div> 
+                {inputs.score_average}
+            </div>
         </div>
     );
 }

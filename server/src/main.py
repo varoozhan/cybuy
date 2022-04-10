@@ -11,15 +11,15 @@ def run_cybuy(user_input):
     # Extract relevant info from the entries that were returned by search_db
     average_db_score = relevant_extractor(nvd_entries)
     # Algorithm to calculate the score
-    total_average = risk_calculator(average_db_score, user_input)
+    updated_user_input = risk_calculator(average_db_score, user_input)
     # # Store the user input into the database
-    store_user_inputs(user_input, total_average)
+    store_user_inputs(updated_user_input)
     # # A general analysis of the database like returning a summary statistics or smth.
     # final_result = analytics(analysis_info)
     # # send the final result to the front end
     # send_result(final_result)
 
-    return total_average
+    return updated_user_input
 
 
 def main():

@@ -30,5 +30,5 @@ def search_db(user_input):
     #     print()
         # break
 
-    print("You hit search_db")
+    # print("You hit search_db")
     return {"result": nvd_results}

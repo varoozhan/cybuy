@@ -33,7 +33,7 @@ function Questions(props) {
       ...inputs,
       ["yes"]: radioButtonsChecked.filter(value => value === true).length,
     })) 
-    console.log(inputs)
+                        // console.log(inputs)
 
   }
   // useRef(() => {     
@@ -62,10 +62,9 @@ function Questions(props) {
       return response.json()
     })
     .then(json => {
-      console.log(json)
+    navigate('/Results',{state: json});
 
     })
-    // navigate('/Results',{state:inputs});
 
   }
 
