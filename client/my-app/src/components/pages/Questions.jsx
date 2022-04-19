@@ -15,6 +15,7 @@ import {Link, useNavigate} from 'react-router-dom';
 
 var NUM = 9;     
 var radioButtonsChecked = new Array(NUM).fill(false);
+
 const styles = {
   formLabel: {
     color: "#000 !important",
@@ -23,7 +24,9 @@ const styles = {
     }
   }
 };
+
 function Questions() {
+
   const location = useLocation();
   const [inputs, setInputs] = useState(location.state);
   // const questionCounter = 0
@@ -43,26 +46,14 @@ function Questions() {
       ...inputs,
       ["yes"]: radioButtonsChecked.filter(value => value === true).length,
     })) 
-                        // console.log(inputs)
 
   }
-  // useRef(() => {     
-  //   setInputs(inputs=> ({
-  //     ...inputs,
-  //     ["yes"]: radioButtonsChecked.filter(value => value === true).length,
-  //   })) 
-  // }, [])
   
   function handleClickPrevious(){
     navigate('/product_selection');
   }
 
   function handleClick(event){
-
-    // console.log(inputs)
-
-
-
 
     fetch("http://127.0.0.1:5000/product_selection", {
       method:"POST",
@@ -93,7 +84,7 @@ function Questions() {
       >
       <Grid item xs={3}>
       <Typography variant="body1" >
-        1. Do you work from home?
+        1. Will your device be connected to a public or a private network or both?
         </Typography>
         </Grid>   
         <Grid item xs={3}>
@@ -112,7 +103,7 @@ function Questions() {
       </Grid>   
       <Grid item xs={3}>
       <Typography variant="body1" >
-        2. Will your device be connected to a public or a private network or both?
+        2. Do you use smart devices such as Amazon Alexa or Google Home? 
         </Typography>
         </Grid>   
         <Grid item xs={3}>
@@ -131,7 +122,7 @@ function Questions() {
       </Grid> 
       <Grid item xs={3}>
       <Typography variant="body1" >
-        3. Are you a programmer?
+        3. Do you intend to store data in locally in this device or on the cloud?
         </Typography>
         </Grid>   
         <Grid item xs={3}>
@@ -150,7 +141,7 @@ function Questions() {
       </Grid> 
       <Grid item xs={3}>
       <Typography variant="body1" >
-        4. Do you intend to store data in locally in this device or on the cloud?
+        4. Do you intend to install any antivirus software on you new device?
         </Typography>
         </Grid>   
         <Grid item xs={3}>
@@ -169,7 +160,7 @@ function Questions() {
       </Grid> 
       <Grid item xs={3}>
       <Typography variant="body1" >
-        5. Do you work with distributed systems?
+        5. Do you intend to use a VPN on you new device?
         </Typography>
         </Grid>   
         <Grid item xs={3}>
@@ -188,7 +179,7 @@ function Questions() {
       </Grid> 
       <Grid item xs={3}>
       <Typography variant="body1" >
-        6. Are you an ioT nerd?       
+        6. Do you work with distributed systems?
         </Typography>
         </Grid>   
         <Grid item xs={3}>
@@ -207,7 +198,7 @@ function Questions() {
       </Grid> 
       <Grid item xs={3}>
       <Typography variant="body1" >
-        7. Do you use smart devices such as Amazon Alexa or Google Home?         
+        7. Do you work from home?         
         </Typography>
         </Grid> 
         <Grid item xs={3}>
@@ -226,7 +217,7 @@ function Questions() {
       </Grid>
       <Grid item xs={3}>
       <Typography variant="body1" >
-        8. Do you intend to install any antivirus software on you new device?          
+        8. Are you a programmer?
         </Typography>
         </Grid>   
         <Grid item xs={3}>
@@ -245,7 +236,7 @@ function Questions() {
       </Grid> 
       <Grid item xs={3}>
       <Typography variant="body1" >
-        9. Do you intend to use a VPN on you new device?
+        9. Are you an ioT nerd?
           </Typography>
           </Grid>   
         <Grid item xs={3}>

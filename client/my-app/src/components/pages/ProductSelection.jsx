@@ -2,10 +2,11 @@
 // import React from 'react';
 import React, {useState} from 'react';
 import Box from '@mui/material/Box';
-import './ProductSelection.css';
+// import './ProductSelection.css';
 // import './Heading.css';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
 import {Link, useNavigate} from 'react-router-dom';
 
 
@@ -38,15 +39,24 @@ export default function ProductSelection(props) {
   }
 
   return (
-    <Box
-      component="form"
-      sx={{
-        '& > :not(style)': { m: 2, width: 'center' },        
-      }}
-      noValidate
-      autoComplete="off"
-      style={{ textAlign: "left", marginTop: 20 }}
+    // <Box
+    //   component="form"
+    //   sx={{
+    //     '& > :not(style)': { m: 2, width: 'center' },        
+    //   }}
+    //   noValidate
+    //   autoComplete="off"
+    //   style={{ textAlign: "left", marginTop: 20 }}
+    // >
+    <Grid
+    container
+    spacing={0}
+    direction="column"
+    alignItems="center"
+    justifyContent="top"
+    style={{ minHeight: '100vh', marginTop:'50px' }}
     >
+      <Grid style={{width:"50%"}} item xs={3}>
         <TextField 
           fullWidth 
           id="outlined-basic" 
@@ -57,6 +67,8 @@ export default function ProductSelection(props) {
           value={inputs.email}
           name="email"
         />
+      </Grid>
+      <Grid style={{width:"50%", margin:'29px 0 0 0'}} item xs={3}>
         <TextField 
         fullWidth 
         id="outlined-basic" 
@@ -66,6 +78,8 @@ export default function ProductSelection(props) {
         value={inputs.vendor}
         name="vendor"
         />
+      </Grid>
+      <Grid style={{width:"50%", margin:'30px 0 0 0'}} item xs={3}>
         <TextField 
         fullWidth 
         id="outlined-basic" 
@@ -75,22 +89,22 @@ export default function ProductSelection(props) {
         value={inputs.device}
         name="device"
          />
-      <Button 
+      </Grid>
+      <Grid item xs={3}>
+
+        <Button 
         style={{ margin:'30px 0 0 0' }} 
         onClick={handleClickPrevious} 
         variant="contained">
           Previous
-      </Button>
-      <Button onClick={()=>{handleClick()}} variant="contained">Next</Button>
-
-      <div className='mt-2'>
-        {/* {returnedResult.result.map(result => {
-          // return <span key={JSON.stringify(result)._id}>{JSON.stringify(result)}</span>
-          // return <span>{JSON.stringify(result)}</span>
-        })} */}
-        {/* {returnedResult.result} */}
-      </div>
-
-    </Box>
+        </Button>
+        <Button 
+        style={{ margin:'30px 0 0 50px' }}
+        onClick={()=>{handleClick()}} 
+        variant="contained">
+          Next
+        </Button>
+      </Grid>
+    </Grid>
   );
 }
