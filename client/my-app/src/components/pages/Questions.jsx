@@ -6,14 +6,24 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
+import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
 import {useLocation} from 'react-router-dom';
 import {Link, useNavigate} from 'react-router-dom';
 
+
 var NUM = 9;     
 var radioButtonsChecked = new Array(NUM).fill(false);
-
-function Questions(props) {
+const styles = {
+  formLabel: {
+    color: "#000 !important",
+    "&.Mui-focused": {
+      color: "#000 !important"
+    }
+  }
+};
+function Questions() {
   const location = useLocation();
   const [inputs, setInputs] = useState(location.state);
   // const questionCounter = 0
@@ -42,6 +52,10 @@ function Questions(props) {
   //     ["yes"]: radioButtonsChecked.filter(value => value === true).length,
   //   })) 
   // }, [])
+  
+  function handleClickPrevious(){
+    navigate('/product_selection');
+  }
 
   function handleClick(event){
 
@@ -69,9 +83,20 @@ function Questions(props) {
   }
 
   return (
-    <div>
-      <FormControl>
-      <FormLabel id="demo-radio-buttons-group-label">1. Do you work from home?</FormLabel>
+    <Grid
+      container
+      spacing={0}
+      direction="column"
+      alignItems="center"
+      justifyContent="top"
+      style={{ minHeight: '100vh', marginTop:'50px' }}
+      >
+      <Grid item xs={3}>
+      <Typography variant="body1" >
+        1. Do you work from home?
+        </Typography>
+        </Grid>   
+        <Grid item xs={3}>
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
           // defaultValue="yes"
@@ -82,9 +107,15 @@ function Questions(props) {
         >
           <FormControlLabel value="yes" control={<Radio />} label="Yes" />
           <FormControlLabel value="no" control={<Radio />} label="No" />
-          <FormControlLabel value="other" control={<Radio />} label="What?" />
+          <FormControlLabel value="other" control={<Radio />} label="Unsure?" />
         </RadioGroup>
-        <FormLabel id="demo-radio-buttons-group-label">2. Will your device be connected to a public or a private network or both?</FormLabel>
+      </Grid>   
+      <Grid item xs={3}>
+      <Typography variant="body1" >
+        2. Will your device be connected to a public or a private network or both?
+        </Typography>
+        </Grid>   
+        <Grid item xs={3}>
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
           // defaultValue="yes"
@@ -97,7 +128,13 @@ function Questions(props) {
           <FormControlLabel value="no" control={<Radio />} label="Private" />
           <FormControlLabel value="other" control={<Radio />} label="both?" />
         </RadioGroup>
-        <FormLabel id="demo-radio-buttons-group-label">3. Are you a programmer?</FormLabel>
+      </Grid> 
+      <Grid item xs={3}>
+      <Typography variant="body1" >
+        3. Are you a programmer?
+        </Typography>
+        </Grid>   
+        <Grid item xs={3}>
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
           // defaultValue="yes"
@@ -108,9 +145,15 @@ function Questions(props) {
         >
           <FormControlLabel value="yes" control={<Radio />} label="Yes" />
           <FormControlLabel value="no" control={<Radio />} label="No" />
-          <FormControlLabel value="other" control={<Radio />} label="What?" />
+          <FormControlLabel value="other" control={<Radio />} label="Unsure?" />
         </RadioGroup>
-        <FormLabel id="demo-radio-buttons-group-label">4. Do you intend to store data in locally in this device or on the cloud?</FormLabel>
+      </Grid> 
+      <Grid item xs={3}>
+      <Typography variant="body1" >
+        4. Do you intend to store data in locally in this device or on the cloud?
+        </Typography>
+        </Grid>   
+        <Grid item xs={3}>
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
           // defaultValue="yes"
@@ -119,11 +162,17 @@ function Questions(props) {
           // value="3"
           onChange={handleChange}
         >
-          <FormControlLabel value="yes" control={<Radio />} label="local" />
+          <FormControlLabel value="yes" control={<Radio />} label="Local" />
           <FormControlLabel value="no" control={<Radio />} label="cloud" />
-          <FormControlLabel value="other" control={<Radio />} label="What?" />
+          <FormControlLabel value="other" control={<Radio />} label="Unsure?" />
         </RadioGroup>
-        <FormLabel id="demo-radio-buttons-group-label">5. Do you work with distributed systems?</FormLabel>
+      </Grid> 
+      <Grid item xs={3}>
+      <Typography variant="body1" >
+        5. Do you work with distributed systems?
+        </Typography>
+        </Grid>   
+        <Grid item xs={3}>
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
           // defaultValue="yes"
@@ -134,9 +183,15 @@ function Questions(props) {
         >
           <FormControlLabel value="yes" control={<Radio />} label="Yes" />
           <FormControlLabel value="no" control={<Radio />} label="No" />
-          <FormControlLabel value="other" control={<Radio />} label="What?" />
+          <FormControlLabel value="other" control={<Radio />} label="Unsure?" />
         </RadioGroup>
-        <FormLabel id="demo-radio-buttons-group-label">6. Are you an ioT nerd?</FormLabel>
+      </Grid> 
+      <Grid item xs={3}>
+      <Typography variant="body1" >
+        6. Are you an ioT nerd?       
+        </Typography>
+        </Grid>   
+        <Grid item xs={3}>
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
           // defaultValue="yes"
@@ -147,9 +202,15 @@ function Questions(props) {
         >
           <FormControlLabel value="yes" control={<Radio />} label="Yes" />
           <FormControlLabel value="no" control={<Radio />} label="No" />
-          <FormControlLabel value="other" control={<Radio />} label="What?" />
+          <FormControlLabel value="other" control={<Radio />} label="Unsure?" />
         </RadioGroup>
-        <FormLabel id="demo-radio-buttons-group-label">7. Do you use smart devices such as Amazon Alexa or Google Home?</FormLabel>
+      </Grid> 
+      <Grid item xs={3}>
+      <Typography variant="body1" >
+        7. Do you use smart devices such as Amazon Alexa or Google Home?         
+        </Typography>
+        </Grid> 
+        <Grid item xs={3}>
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
           // defaultValue="yes"
@@ -160,9 +221,15 @@ function Questions(props) {
         >
           <FormControlLabel value="yes" control={<Radio />} label="Yes" />
           <FormControlLabel value="no" control={<Radio />} label="No" />
-          <FormControlLabel value="other" control={<Radio />} label="What?" />
+          <FormControlLabel value="other" control={<Radio />} label="Unsure?" />
         </RadioGroup>
-        <FormLabel id="demo-radio-buttons-group-label">8. Do you intend to install any antivirus software on you new device?</FormLabel>
+      </Grid>
+      <Grid item xs={3}>
+      <Typography variant="body1" >
+        8. Do you intend to install any antivirus software on you new device?          
+        </Typography>
+        </Grid>   
+        <Grid item xs={3}>
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
           // defaultValue="yes"
@@ -173,9 +240,15 @@ function Questions(props) {
         >
           <FormControlLabel value="yes" control={<Radio />} label="Yes" />
           <FormControlLabel value="no" control={<Radio />} label="No" />
-          <FormControlLabel value="other" control={<Radio />} label="What?" />
+          <FormControlLabel value="other" control={<Radio />} label="Unsure?" />
         </RadioGroup>
-        <FormLabel id="demo-radio-buttons-group-label">9. Do you intend to use a VPN on you new device?</FormLabel>
+      </Grid> 
+      <Grid item xs={3}>
+      <Typography variant="body1" >
+        9. Do you intend to use a VPN on you new device?
+          </Typography>
+          </Grid>   
+        <Grid item xs={3}>
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
           // defaultValue="yes"
@@ -186,12 +259,24 @@ function Questions(props) {
         >
           <FormControlLabel value="yes" control={<Radio />} label="Yes" />
           <FormControlLabel value="no" control={<Radio />} label="No" />
-          <FormControlLabel value="other" control={<Radio />} label="What?" />
+          <FormControlLabel value="other" control={<Radio />} label="Unsure?" />
         </RadioGroup>
-      </FormControl>
-      <Button onClick={handleClick} variant="contained">Submit</Button>
-
-    </div>
+      </Grid> 
+      <Grid item xs={3}>
+        <Button 
+        style={{ margin:'30px 0 0 0' }} 
+        onClick={handleClickPrevious} 
+        variant="contained">
+          Previous
+        </Button>
+        <Button 
+        style={{ margin:'30px 0 0 50px' }}
+        onClick={handleClick} 
+        variant="contained" >
+          Results!
+        </Button>
+      </Grid> 
+    </Grid>
   );
 }
 

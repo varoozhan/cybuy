@@ -33,6 +33,10 @@ export default function ProductSelection(props) {
 
   }
 
+  function handleClickPrevious(){
+    navigate('/');
+  }
+
   return (
     <Box
       component="form"
@@ -71,8 +75,14 @@ export default function ProductSelection(props) {
         value={inputs.device}
         name="device"
          />
+      <Button 
+        style={{ margin:'30px 0 0 0' }} 
+        onClick={handleClickPrevious} 
+        variant="contained">
+          Previous
+      </Button>
       <Button onClick={()=>{handleClick()}} variant="contained">Next</Button>
-      
+
       <div className='mt-2'>
         {/* {returnedResult.result.map(result => {
           // return <span key={JSON.stringify(result)._id}>{JSON.stringify(result)}</span>
@@ -84,51 +94,3 @@ export default function ProductSelection(props) {
     </Box>
   );
 }
-// Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
-// const top100Films = [
-//   { "manufacturer": 'apple', "device": 'apple' },
-//   { "title": 'samsung', "year": 'galaxy' },
-// ]
-
-
-// {/* <div className='mt-2'>
-// {props.returnedResult && props.returnedResult.map(each_result =>{
-//   return(
-//     <div key={each_result._id}>
-//       {/* {each_result.cve.CVE_data_meta.ID} */}
-//     </div>
-//   )
-// })}
-// </div> */}
-
-// {/* <div className="mt-2">
-// {/* Display the article details if article is not None */} 
-// {props.articles && props.articles.map(article =>{
-//     return (
-
-//       <div key= {article.id}>
-//         <h2 className="text-primary"> { article.title} </h2>
-//         <p> { article.body } </p>
-//         <p> { article.date } </p>
-//         <hr/>
-//       </div>
-//     )
-
-//     })}
-// </div> */}
-
-
-
-  // useEffect(()=>{
-  //   fetch(`http://127.0.0.1:5000/entries`,{
-  //     'methods':'GET',
-  //     headers : {
-  //       'Content-Type':'application/json'
-  //     }
-  //   })
-  //   .then(response => response.json())
-  //   .then(json=> setreturnedResult(json.result))
-  //   .then(json=> console.log(json.result))
-  //   .catch(error => console.log(error))
-  // },[input])
-  // input

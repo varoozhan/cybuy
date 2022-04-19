@@ -7,8 +7,9 @@ def create_cpe(v, p):
     return ret_val
 
 def search_db(user_input):
-    client = MongoClient(r'mongodb://127.0.0.1:27017/?directConnection=true')
-    db = client['local']
+    client = MongoClient(r"mongodb+srv://varo:EcivL3qg2trHxvD@cluster0.lvyin.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+    # client = MongoClient(r'mongodb://127.0.0.1:27017/?directConnection=true')
+    db = client['vulnerabilities']
     nvd_collection = db['nvdCollection']
 
     # cpe = create_cpe(user_input["manufacturer"], user_input["device"])

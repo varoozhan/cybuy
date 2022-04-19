@@ -74,7 +74,7 @@ def result():
           # counterpart for url_for()
         print(rslt)
     else:
-        return f"<div>{rslt}/div>"
+        return f"<div>{0}</div>"
     # if player_id:
     #    data = get_player(player_id)
     #    name = str(data['name'][0])
