@@ -1,6 +1,5 @@
-// import './Results.css';
 import React, {useState} from 'react';
-import {useLocation} from 'react-router-dom';
+// import {useLocation} from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -32,7 +31,6 @@ function Home() {
             <Grid item xs={3}>
                 <img
                     src={main_logo}
-                    // srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                     alt="CYBUY"
                     loading="lazy"
                 />

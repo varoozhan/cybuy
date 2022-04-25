@@ -1,13 +1,18 @@
-// import './Results.css';
 import React, {useState} from 'react';
 import {useLocation} from 'react-router-dom';
 import ReactSpeedometer from "react-d3-speedometer"
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import {useNavigate} from 'react-router-dom';
+import main_logo from "../../assets/other1.png";
+
+let w = window.innerWidth;
+let h = window.innerHeight;
 
 function Results() {
     const location = useLocation();
+    const navigate = useNavigate();
     const [inputs, setInputs] = useState(location.state);
     var description = 0
 
@@ -26,9 +31,9 @@ function Results() {
         return description
     }
 
-    function handleClickNext(){
-
-    }
+    function handleClickPrevious(){
+        navigate('/product_selection');
+      }
 
     console.log(inputs)
     return (
@@ -38,9 +43,9 @@ function Results() {
         direction="column"
         alignItems="center"
         justifyContent="top"
-        style={{ minHeight: '100vh', marginTop:'50px' }}
+        style={{ minHeight: '100vh', backgroundImage: `linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)), url(${main_logo})`, backgroundSize: w + 'px ' + h + 'px'}}
         >
-            <Grid item xs={3}>
+            <Grid item xs={3} style={{marginTop:'100px'}}>
                 <Typography variant="h2" >
                     Results!
                 </Typography>
@@ -67,14 +72,12 @@ function Results() {
                 {resultsDescription()}
                 </Typography>
             </Grid>
-            {/* <Grid item xs={3}>
             <Button 
-            style={{ margin:'30px 0 0 0' }} 
-            onClick={handleClickNext} 
-            variant="contained">
-                Analysis
+                style={{ margin:'30px 0 0 0' }} 
+                onClick={handleClickPrevious} 
+                variant="contained">
+                Product Selection
             </Button>
-            </Grid> */}
         </Grid>  
 
     );

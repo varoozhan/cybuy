@@ -48,16 +48,6 @@ const ResponsiveAppBar = () => {
             alt="Your logo."
             src={Logo}
         />
-          {/* <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-            
-          >
-            logo
-          </Typography> */}
-
           <Box src={Logo} sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -94,19 +84,11 @@ const ResponsiveAppBar = () => {
                       style={{textDecoration:"none", color:"black"}} 
                       to={`/${page}`}>{page}
                     </Link>
-                    </Typography>
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          {/* <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >
-            LOGO
-          </Typography> */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button

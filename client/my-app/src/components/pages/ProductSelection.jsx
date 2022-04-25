@@ -1,17 +1,13 @@
-// import logo from './logo.svg';
-// import React from 'react';
 import React, {useState} from 'react';
-import Box from '@mui/material/Box';
-// import './ProductSelection.css';
-// import './Heading.css';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import {Link, useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
+import main_logo from "../../assets/other.png";
+let w = window.innerWidth;
+let h = window.innerHeight;
 
-
-// import Autocomplete from '@mui/material/Autocomplete';
-const userInput = {email:"", vendor:"", device:"", yes:0}
+const userInput = {email:"", vendor:"", device:"", version:"", yes:0}
 
 
 export default function ProductSelection(props) {
@@ -39,24 +35,15 @@ export default function ProductSelection(props) {
   }
 
   return (
-    // <Box
-    //   component="form"
-    //   sx={{
-    //     '& > :not(style)': { m: 2, width: 'center' },        
-    //   }}
-    //   noValidate
-    //   autoComplete="off"
-    //   style={{ textAlign: "left", marginTop: 20 }}
-    // >
     <Grid
     container
     spacing={0}
     direction="column"
     alignItems="center"
     justifyContent="top"
-    style={{ minHeight: '100vh', marginTop:'50px' }}
+    style={{ minHeight: '100vh',backgroundImage: `linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url(${main_logo})`, backgroundSize: w + 'px ' + h + 'px'}}
     >
-      <Grid style={{width:"50%"}} item xs={3}>
+      <Grid style={{width:"50%", marginTop:'50px'}} item xs={3}>
         <TextField 
           fullWidth 
           id="outlined-basic" 
@@ -68,7 +55,8 @@ export default function ProductSelection(props) {
           name="email"
         />
       </Grid>
-      <Grid style={{width:"50%", margin:'29px 0 0 0'}} item xs={3}>
+      <Grid style={{width:"50%", margin:'29px 0 0 0'}} 
+        item xs={3}>
         <TextField 
         fullWidth 
         id="outlined-basic" 
@@ -77,6 +65,7 @@ export default function ProductSelection(props) {
         onChange={handleChange}
         value={inputs.vendor}
         name="vendor"
+        // style={{opacity: 1}}
         />
       </Grid>
       <Grid style={{width:"50%", margin:'30px 0 0 0'}} item xs={3}>
@@ -90,8 +79,18 @@ export default function ProductSelection(props) {
         name="device"
          />
       </Grid>
+      <Grid style={{width:"50%", margin:'30px 0 0 0'}} item xs={3}>
+        <TextField 
+        fullWidth 
+        id="outlined-basic" 
+        label="Version" 
+        variant="outlined"
+        onChange={handleChange}
+        value={inputs.version}
+        name="version"
+         />
+      </Grid>
       <Grid item xs={3}>
-
         <Button 
         style={{ margin:'30px 0 0 0' }} 
         onClick={handleClickPrevious} 

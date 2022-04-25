@@ -1,15 +1,10 @@
 from pymongo import MongoClient
-# from src.algo_config import client_name
 import os
 import json
 
-# pprint library is used to make the output look more pretty
-from pprint import pprint
 
-# connect to MongoDB, change the << MONGODB URL >> to reflect your own connection string
-# client = MongoClient(r"mongodb://127.0.0.1:27017/?directConnection=true")
 # client = MongoClient(r"mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false")
-client = MongoClient(r"mongodb+srv://varo:EcivL3qg2trHxvD@cluster0.lvyin.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+client = MongoClient(r"mongodb+srv://varo:<PASSWORD>@cluster0.lvyin.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 db = client['vulnerabilities']
 collection = db["nvdCollection"]
 
